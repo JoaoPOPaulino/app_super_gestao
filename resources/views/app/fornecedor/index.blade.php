@@ -1,9 +1,15 @@
 <h3>Fornecedor</h3>
-{{-- Fornecedor Index --}}
 
 @php
-    // Comentario de uma linha
-    /*
-    Comentarios de mútiplas linhas
-    */
+    
 @endphp
+
+@add($forncedores)
+
+@if (count($fornecedores) >0 && count($fornecedores) < 10)
+    <h3>Existem alguns fornecedores cadastrados</h3>
+@elseif (count($fornecedores) > 10)
+    <h3>Existem varios fornecedores cadastrados</h3>
+@else
+    <h3>Não existem fornecedores cadastrados</h3>
+@endif
