@@ -19,5 +19,23 @@
     <br>
     Status: {{ $fornecedores[0]['status'] }}
     <br>
-    CNPJ: {{ $fornecedores[0]['cnpj'] }}
+    CNPJ: {{ $fornecedores[0]['cnpj'] ?? 'CNPJ não disponível' }}
+    <br>
+    DDD: {{ $fornecedores[0]['ddd'] ?? 'DDD não disponível' }}
+    <br>
+    Telefone: {{ $fornecedores[0]['telefone'] }}
+    @switch($fornecedores[1]['ddd'])
+        @case('11')
+            São Paulo - SP
+            @break
+        @case('32')
+            Juiz de Fora - MG
+            @break
+        @case('85')
+            Fortaleza - CE
+            @break
+        @default
+            Estado não identificado
+            
+    @endswitch
 @endisset
